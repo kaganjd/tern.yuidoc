@@ -1125,7 +1125,7 @@ var yuiDoc = {
             "module": "IO",
             "namespace": "",
             "file": "src/io/files.js",
-            "line": 1008
+            "line": 982
         },
         "Table": {
             "name": "Table",
@@ -4004,7 +4004,7 @@ var yuiDoc = {
         },
         {
             "file": "src/core/core.js",
-            "line": 385,
+            "line": 387,
             "description": "<p>Removes the entire p5 sketch. This will remove the canvas and any\nelements created by p5.js. It will also stop the draw loop and unbind\nany properties or methods from the window global scope. It will\nleave a variable p5 in case you wanted to create a new p5 sketch.\nIf you like, you can set p5 = null to erase it.</p>\n",
             "itemtype": "method",
             "name": "remove",
@@ -5349,7 +5349,7 @@ var yuiDoc = {
         },
         {
             "file": "src/core/p5.Renderer2D.js",
-            "line": 357,
+            "line": 354,
             "description": "<p>Generate a cubic Bezier representing an arc on the unit circle of total\nangle <code>size</code> radians, beginning <code>start</code> radians above the x-axis. Up to\nfour of these curves are combined to make a full arc.</p>\n<p>See www.joecridge.me/bezier.pdf for an explanation of the method.</p>\n",
             "class": "p5",
             "module": "Rendering"
@@ -5396,6 +5396,23 @@ var yuiDoc = {
             "description": "<p>Resizes the canvas to given width and height. The canvas will be cleared\nand draw will be called immediately, allowing the sketch to re-render itself\nin the resized canvas.</p>\n",
             "itemtype": "method",
             "name": "resizeCanvas",
+            "params": [
+                {
+                    "name": "w",
+                    "description": "<p>width of the canvas</p>\n",
+                    "type": "Number"
+                },
+                {
+                    "name": "h",
+                    "description": "<p>height of the canvas</p>\n",
+                    "type": "Number"
+                },
+                {
+                    "name": "noRedraw",
+                    "description": "<p>don&#39;t redraw the canvas immediately</p>\n",
+                    "type": "Boolean"
+                }
+            ],
             "example": [
                 "\n<div class=\"norender\"><code>\nfunction setup() {\n  createCanvas(windowWidth, windowHeight);\n}\n\nfunction draw() {\n background(0, 100, 200);\n}\n\nfunction windowResized() {\n  resizeCanvas(windowWidth, windowHeight);\n}\n</code></div>"
             ],
@@ -5406,7 +5423,7 @@ var yuiDoc = {
         },
         {
             "file": "src/core/rendering.js",
-            "line": 166,
+            "line": 169,
             "description": "<p>Removes the default canvas for a p5 sketch that doesn&#39;t\nrequire a canvas</p>\n",
             "itemtype": "method",
             "name": "noCanvas",
@@ -5420,7 +5437,7 @@ var yuiDoc = {
         },
         {
             "file": "src/core/rendering.js",
-            "line": 189,
+            "line": 192,
             "description": "<p>Creates and returns a new p5.Renderer object. Use this class if you need\nto draw into an off-screen graphics buffer. The two parameters define the\nwidth and height in pixels.</p>\n",
             "itemtype": "method",
             "name": "createGraphics",
@@ -5456,7 +5473,7 @@ var yuiDoc = {
         },
         {
             "file": "src/core/rendering.js",
-            "line": 227,
+            "line": 230,
             "description": "<p>Blends the pixels in the display window according to the defined mode.\nThere is a choice of the following modes to blend the source pixels (A)\nwith the ones of pixels already in the display window (B):</p>\n<ul>\n<li><code>BLEND</code> - linear interpolation of colours: C =\nA<em>factor + B. This is the default blending mode.</li>\n<li><code>ADD</code> - sum of A and B</li>\n<li><code>DARKEST</code> - only the darkest colour succeeds: C =\nmin(A</em>factor, B).</li>\n<li><code>LIGHTEST</code> - only the lightest colour succeeds: C =\nmax(A*factor, B).</li>\n<li><code>DIFFERENCE</code> - subtract colors from underlying image.</li>\n<li><code>EXCLUSION</code> - similar to <code>DIFFERENCE</code>, but less\nextreme.</li>\n<li><code>MULTIPLY</code> - multiply the colors, result will always be\ndarker.</li>\n<li><code>SCREEN</code> - opposite multiply, uses inverse values of the\ncolors.</li>\n<li><code>REPLACE</code> - the pixels entirely replace the others and\ndon&#39;t utilize alpha (transparency) values.</li>\n<li><code>OVERLAY</code> - mix of <code>MULTIPLY</code> and <code>SCREEN\n</code>. Multiplies dark values, and screens light values.</li>\n<li><code>HARD_LIGHT</code> - <code>SCREEN</code> when greater than 50%\ngray, <code>MULTIPLY</code> when lower.</li>\n<li><code>SOFT_LIGHT</code> - mix of <code>DARKEST</code> and\n<code>LIGHTEST</code>. Works like <code>OVERLAY</code>, but not as harsh.\n</li>\n<li><code>DODGE</code> - lightens light tones and increases contrast,\nignores darks.</li>\n<li><code>BURN</code> - darker areas are applied, increasing contrast,\nignores lights.</li>\n</ul>",
             "itemtype": "method",
             "name": "blendMode",
@@ -7156,7 +7173,7 @@ var yuiDoc = {
         },
         {
             "file": "src/image/loading_displaying.js",
-            "line": 109,
+            "line": 106,
             "description": "<p>Validates clipping params. Per drawImage spec sWidth and sHight cannot be\nnegative or greater than image intrinsic width and height</p>\n",
             "access": "private",
             "tagname": "",
@@ -7182,7 +7199,7 @@ var yuiDoc = {
         },
         {
             "file": "src/image/loading_displaying.js",
-            "line": 127,
+            "line": 124,
             "description": "<p>Draw an image to the main canvas of the p5js sketch</p>\n",
             "itemtype": "method",
             "name": "image",
@@ -7195,7 +7212,7 @@ var yuiDoc = {
             "submodule": "Loading & Displaying",
             "overloads": [
                 {
-                    "line": 127,
+                    "line": 124,
                     "params": [
                         {
                             "name": "img",
@@ -7225,7 +7242,7 @@ var yuiDoc = {
                     ]
                 },
                 {
-                    "line": 168,
+                    "line": 165,
                     "params": [
                         {
                             "name": "img",
@@ -7280,7 +7297,7 @@ var yuiDoc = {
         },
         {
             "file": "src/image/loading_displaying.js",
-            "line": 250,
+            "line": 247,
             "description": "<p>Sets the fill value for displaying images. Images can be tinted to\nspecified colors or made transparent by including an alpha value.\n<br><br>\nTo apply transparency to an image without affecting its color, use\nwhite as the tint color and specify an alpha value. For instance,\ntint(255, 128) will make an image 50% transparent (assuming the default\nalpha range of 0-255, which can be changed with colorMode()).\n<br><br>\nThe value for the gray parameter must be less than or equal to the current\nmaximum value as specified by colorMode(). The default maximum value is\n255.</p>\n",
             "itemtype": "method",
             "name": "tint",
@@ -7319,7 +7336,7 @@ var yuiDoc = {
         },
         {
             "file": "src/image/loading_displaying.js",
-            "line": 325,
+            "line": 322,
             "description": "<p>Removes the current fill value for displaying images and reverts to\ndisplaying images with their original hues.</p>\n",
             "itemtype": "method",
             "name": "noTint",
@@ -7333,7 +7350,7 @@ var yuiDoc = {
         },
         {
             "file": "src/image/loading_displaying.js",
-            "line": 354,
+            "line": 351,
             "description": "<p>Apply the current tint color to the input image, return the resulting\ncanvas.</p>\n",
             "params": [
                 {
@@ -7352,7 +7369,7 @@ var yuiDoc = {
         },
         {
             "file": "src/image/loading_displaying.js",
-            "line": 390,
+            "line": 387,
             "description": "<p>Set image mode. Modifies the location from which images are drawn by\nchanging the way in which parameters given to image() are interpreted.\nThe default mode is imageMode(CORNER), which interprets the second and\nthird parameters of image() as the upper-left corner of the image. If\ntwo additional parameters are specified, they are used to set the image&#39;s\nwidth and height.\n<br><br>\nimageMode(CORNERS) interprets the second and third parameters of image()\nas the location of one corner, and the fourth and fifth parameters as the\nopposite corner.\n<br><br>\nimageMode(CENTER) interprets the second and third parameters of image()\nas the image&#39;s center point. If two additional parameters are specified,\nthey are used to set the image&#39;s width and height.</p>\n",
             "itemtype": "method",
             "name": "imageMode",
@@ -8081,16 +8098,6 @@ var yuiDoc = {
         {
             "file": "src/io/files.js",
             "line": 20,
-            "description": "<p>Checks if we are in preload and returns the last arg which will be the\n_decrementPreload function if called from a loadX() function.  Should\nonly be used in loadX() functions.</p>\n",
-            "access": "private",
-            "tagname": "",
-            "class": "p5",
-            "module": "IO",
-            "submodule": "Input"
-        },
-        {
-            "file": "src/io/files.js",
-            "line": 39,
             "description": "<p>Loads an opentype font file (.otf, .ttf) from a file or a URL,\nand returns a PFont Object. This method is asynchronous,\nmeaning it may not finish before the next line in your sketch\nis executed.\n<br><br>\nThe path to the font should be relative to the HTML file\nthat links in your sketch. Loading an from a URL or other\nremote location may be blocked due to your browser&#39;s built-in\nsecurity.</p>\n",
             "itemtype": "method",
             "name": "loadFont",
@@ -8121,7 +8128,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 161,
+            "line": 140,
             "description": "<p>Loads a JSON file from a file or a URL, and returns an Object or Array.\nThis method is asynchronous, meaning it may not finish before the next\nline in your sketch is executed. JSONP is supported via a polyfill and you\ncan pass in as the second argument an object with definitions of the json\ncallback following the syntax specified <a href=\"https://github.com/camsong/\nfetch-jsonp\">here</a>.</p>\n",
             "itemtype": "method",
             "name": "loadJSON",
@@ -8170,7 +8177,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 285,
+            "line": 263,
             "description": "<p>Reads the contents of a file and creates a String array of its individual\nlines. If the name of the file is used as the parameter, as in the above\nexample, the file must be located in the sketch directory/folder.\n<br><br>\nAlternatively, the file maybe be loaded from anywhere on the local\ncomputer using an absolute path (something that starts with / on Unix and\nLinux, or a drive letter on Windows), or the filename parameter can be a\nURL for a file found on a network.\n<br><br>\nThis method is asynchronous, meaning it may not finish before the next\nline in your sketch is executed.</p>\n",
             "itemtype": "method",
             "name": "loadStrings",
@@ -8207,7 +8214,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 378,
+            "line": 355,
             "description": "<p>Reads the contents of a file or URL and creates a p5.Table object with\nits values. If a file is specified, it must be located in the sketch&#39;s\n&quot;data&quot; folder. The filename parameter can also be a URL to a file found\nonline. By default, the file is assumed to be comma-separated (in CSV\nformat). Table only looks for a header row if the &#39;header&#39; option is\nincluded.</p>\n\n<p>Possible options include:\n<ul>\n<li>csv - parse the table as comma-separated values</li>\n<li>tsv - parse the table as tab-separated values</li>\n<li>header - this table has a header (title) row</li>\n</ul>\n</p>\n\n<p>When passing in multiple options, pass them in as separate parameters,\nseperated by commas. For example:\n<br><br>\n<code>\n  loadTable(&quot;my_csv_file.csv&quot;, &quot;csv&quot;, &quot;header&quot;)\n</code>\n</p>\n\n<p> All files loaded and saved use UTF-8 encoding.</p>\n\n<p>This method is asynchronous, meaning it may not finish before the next\nline in your sketch is executed. Calling loadTable() inside preload()\nguarantees to complete the operation before setup() and draw() are called.\n<p>Outside of preload(), you may supply a callback function to handle the\nobject:</p>\n</p>",
             "itemtype": "method",
             "name": "loadTable",
@@ -8250,7 +8257,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 699,
+            "line": 674,
             "description": "<p>Reads the contents of a file and creates an XML object with its values.\nIf the name of the file is used as the parameter, as in the above example,\nthe file must be located in the sketch directory/folder.</p>\n<p>Alternatively, the file maybe be loaded from anywhere on the local\ncomputer using an absolute path (something that starts with / on Unix and\nLinux, or a drive letter on Windows), or the filename parameter can be a\nURL for a file found on a network.</p>\n<p>This method is asynchronous, meaning it may not finish before the next\nline in your sketch is executed. Calling loadXML() inside preload()\nguarantees to complete the operation before setup() and draw() are called.</p>\n<p>Outside of preload(), you may supply a callback function to handle the\nobject.</p>\n",
             "itemtype": "method",
             "name": "loadXML",
@@ -8287,7 +8294,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 796,
+            "line": 770,
             "description": "<p>Method for executing an HTTP GET request. If data type is not specified,\np5 will try to guess based on the URL, defaulting to text. This is equivalent to\ncalling <code>httpDo(path, &#39;GET&#39;)</code>.</p>\n",
             "itemtype": "method",
             "name": "httpGet",
@@ -8328,7 +8335,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 818,
+            "line": 792,
             "description": "<p>Method for executing an HTTP POST request. If data type is not specified,\np5 will try to guess based on the URL, defaulting to text. This is equivalent to\ncalling <code>httpDo(path, &#39;POST&#39;)</code>.</p>\n",
             "itemtype": "method",
             "name": "httpPost",
@@ -8369,7 +8376,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 840,
+            "line": 814,
             "description": "<p>Method for executing an HTTP request. If data type is not specified,\np5 will try to guess based on the URL, defaulting to text.<br><br>\nFor more advanced use, you may also pass in the path as the first argument\nand a object as the second argument, the signature follows the one specified\nin the Fetch API specification.</p>\n",
             "itemtype": "method",
             "name": "httpDo",
@@ -8378,7 +8385,7 @@ var yuiDoc = {
             "submodule": "Input",
             "overloads": [
                 {
-                    "line": 840,
+                    "line": 814,
                     "params": [
                         {
                             "name": "path",
@@ -8418,7 +8425,7 @@ var yuiDoc = {
                     ]
                 },
                 {
-                    "line": 861,
+                    "line": 835,
                     "params": [
                         {
                             "name": "path",
@@ -8448,7 +8455,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 1073,
+            "line": 1047,
             "description": "<p>Save an image, text, json, csv, wav, or html. Prompts download to\nthe client&#39;s computer. <b>Note that it is not recommended to call save()\nwithin draw if it&#39;s looping, as the save() function will open a new save\ndialog every frame.</b></p>\n<p>The default behavior is to save the canvas as an image. You can\noptionally specify a filename.\nFor example:</p>\n<pre class='language-javascript'><code>\nsave();\nsave(&#39;myCanvas.jpg&#39;); // save a specific canvas with a filename\n</code></pre>\n\n<p>Alternately, the first parameter can be a pointer to a canvas\np5.Element, an Array of Strings,\nan Array of JSON, a JSON object, a p5.Table, a p5.Image, or a\np5.SoundFile (requires p5.sound). The second parameter is a filename\n(including extension). The third parameter is for options specific\nto this type of object. This method will save a file that fits the\ngiven paramaters. For example:</p>\n\n<pre class='language-javascript'><code>\n\nsave('myCanvas.jpg');           // Saves canvas as an image\n\nvar cnv = createCanvas(100, 100);\nsave(cnv, 'myCanvas.jpg');      // Saves canvas as an image\n\nvar gb = createGraphics(100, 100);\nsave(gb, 'myGraphics.jpg');      // Saves p5.Renderer object as an image\n\nsave(myTable, 'myTable.html');  // Saves table as html file\nsave(myTable, 'myTable.csv',);  // Comma Separated Values\nsave(myTable, 'myTable.tsv');   // Tab Separated Values\n\nsave(myJSON, 'my.json');        // Saves pretty JSON\nsave(myJSON, 'my.json', true);  // Optimizes JSON filesize\n\nsave(img, 'my.png');            // Saves pImage as a png image\n\nsave(arrayOfStrings, 'my.txt'); // Saves strings to a text file with line\n                                // breaks after each item in the array\n</code></pre>",
             "itemtype": "method",
             "name": "save",
@@ -8478,7 +8485,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 1190,
+            "line": 1164,
             "description": "<p>Writes the contents of an Array or a JSON object to a .json file.\nThe file saving process and location of the saved file will\nvary between web browsers.</p>\n",
             "itemtype": "method",
             "name": "saveJSON",
@@ -8510,7 +8517,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 1244,
+            "line": 1218,
             "description": "<p>Writes an array of Strings to a text file, one line per String.\nThe file saving process and location of the saved file will\nvary between web browsers.</p>\n",
             "itemtype": "method",
             "name": "saveStrings",
@@ -8536,7 +8543,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 1302,
+            "line": 1276,
             "description": "<p>Writes the contents of a Table object to a file. Defaults to a\ntext file with comma-separated-values (&#39;csv&#39;) but can also\nuse tab separation (&#39;tsv&#39;), or generate an HTML table (&#39;html&#39;).\nThe file saving process and location of the saved file will\nvary between web browsers.</p>\n",
             "itemtype": "method",
             "name": "saveTable",
@@ -8568,7 +8575,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 1429,
+            "line": 1403,
             "description": "<p>Generate a blob of file data as a url to prepare for download.\nAccepts an array of data, a filename, and an extension (optional).\nThis is a private function because it does not do any formatting,\nbut it is used by saveStrings, saveJSON, saveTable etc.</p>\n",
             "params": [
                 {
@@ -8595,7 +8602,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 1452,
+            "line": 1426,
             "description": "<p>Forces download. Accepts a url to filedata/blob, a filename,\nand an extension (optional).\nThis is a private function because it does not do any formatting,\nbut it is used by saveStrings, saveJSON, saveTable etc.</p>\n",
             "params": [
                 {
@@ -8620,7 +8627,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 1492,
+            "line": 1466,
             "description": "<p>Returns a file extension, or another string\nif the provided parameter has no extension.</p>\n",
             "params": [
                 {
@@ -8641,7 +8648,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 1524,
+            "line": 1498,
             "description": "<p>Returns true if the browser is Safari, false if not.\nSafari makes trouble for downloading files.</p>\n",
             "return": {
                 "description": "[description]",
@@ -8655,7 +8662,7 @@ var yuiDoc = {
         },
         {
             "file": "src/io/files.js",
-            "line": 1536,
+            "line": 1510,
             "description": "<p>Helper function, a callback for download that deletes\nan invisible anchor element from the DOM once the file\nhas been automatically downloaded.</p>\n",
             "access": "private",
             "tagname": "",
@@ -19995,7 +20002,7 @@ var yuiDoc = {
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/core.js:385"
+            "line": " src/core/core.js:387"
         },
         {
             "message": "unknown tag: alt",
@@ -20179,15 +20186,15 @@ var yuiDoc = {
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/rendering.js:166"
+            "line": " src/core/rendering.js:169"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/rendering.js:189"
+            "line": " src/core/rendering.js:192"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/core/rendering.js:227"
+            "line": " src/core/rendering.js:230"
         },
         {
             "message": "unknown tag: alt",
@@ -20427,23 +20434,23 @@ var yuiDoc = {
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/image/loading_displaying.js:109"
+            "line": " src/image/loading_displaying.js:106"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/loading_displaying.js:127"
+            "line": " src/image/loading_displaying.js:124"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/loading_displaying.js:250"
+            "line": " src/image/loading_displaying.js:247"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/loading_displaying.js:325"
+            "line": " src/image/loading_displaying.js:322"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/image/loading_displaying.js:390"
+            "line": " src/image/loading_displaying.js:387"
         },
         {
             "message": "unknown tag: alt",
@@ -20531,35 +20538,35 @@ var yuiDoc = {
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/files.js:39"
+            "line": " src/io/files.js:20"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/files.js:161"
+            "line": " src/io/files.js:140"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/files.js:285"
+            "line": " src/io/files.js:263"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/files.js:378"
+            "line": " src/io/files.js:355"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/files.js:699"
+            "line": " src/io/files.js:674"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/files.js:1190"
+            "line": " src/io/files.js:1164"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/files.js:1244"
+            "line": " src/io/files.js:1218"
         },
         {
             "message": "unknown tag: alt",
-            "line": " src/io/files.js:1302"
+            "line": " src/io/files.js:1276"
         },
         {
             "message": "unknown tag: alt",
@@ -21019,7 +21026,7 @@ var yuiDoc = {
         },
         {
             "message": "Missing item type\nGenerate a cubic Bezier representing an arc on the unit circle of total\nangle `size` radians, beginning `start` radians above the x-axis. Up to\nfour of these curves are combined to make a full arc.\n\nSee www.joecridge.me/bezier.pdf for an explanation of the method.",
-            "line": " src/core/p5.Renderer2D.js:357"
+            "line": " src/core/p5.Renderer2D.js:354"
         },
         {
             "message": "Missing item type\nshim for Uint8ClampedArray.slice\n(allows arrayCopy to work with pixels[])\nwith thanks to http://halfpapstudios.com/blog/tag/html5-canvas/\nEnumerable set to false to protect for...in from\nUint8ClampedArray.prototype pollution.",
@@ -21103,11 +21110,11 @@ var yuiDoc = {
         },
         {
             "message": "Missing item type\nValidates clipping params. Per drawImage spec sWidth and sHight cannot be\nnegative or greater than image intrinsic width and height",
-            "line": " src/image/loading_displaying.js:109"
+            "line": " src/image/loading_displaying.js:106"
         },
         {
             "message": "Missing item type\nApply the current tint color to the input image, return the resulting\ncanvas.",
-            "line": " src/image/loading_displaying.js:354"
+            "line": " src/image/loading_displaying.js:351"
         },
         {
             "message": "Missing item type\nThis module defines the p5.Image class and P5 methods for\ndrawing images to the main display canvas.",
@@ -21118,28 +21125,24 @@ var yuiDoc = {
             "line": " src/image/p5.Image.js:175"
         },
         {
-            "message": "Missing item type\nChecks if we are in preload and returns the last arg which will be the\n_decrementPreload function if called from a loadX() function.  Should\nonly be used in loadX() functions.",
-            "line": " src/io/files.js:20"
-        },
-        {
             "message": "Missing item type\nGenerate a blob of file data as a url to prepare for download.\nAccepts an array of data, a filename, and an extension (optional).\nThis is a private function because it does not do any formatting,\nbut it is used by saveStrings, saveJSON, saveTable etc.",
-            "line": " src/io/files.js:1429"
+            "line": " src/io/files.js:1403"
         },
         {
             "message": "Missing item type\nForces download. Accepts a url to filedata/blob, a filename,\nand an extension (optional).\nThis is a private function because it does not do any formatting,\nbut it is used by saveStrings, saveJSON, saveTable etc.",
-            "line": " src/io/files.js:1452"
+            "line": " src/io/files.js:1426"
         },
         {
             "message": "Missing item type\nReturns a file extension, or another string\nif the provided parameter has no extension.",
-            "line": " src/io/files.js:1492"
+            "line": " src/io/files.js:1466"
         },
         {
             "message": "Missing item type\nReturns true if the browser is Safari, false if not.\nSafari makes trouble for downloading files.",
-            "line": " src/io/files.js:1524"
+            "line": " src/io/files.js:1498"
         },
         {
             "message": "Missing item type\nHelper function, a callback for download that deletes\nan invisible anchor element from the DOM once the file\nhas been automatically downloaded.",
-            "line": " src/io/files.js:1536"
+            "line": " src/io/files.js:1510"
         },
         {
             "message": "Missing item type\nTable Options\n<p>Generic class for handling tabular data, typically from a\nCSV, TSV, or other sort of spreadsheet file.</p>\n<p>CSV files are\n<a href=\"http://en.wikipedia.org/wiki/Comma-separated_values\">\ncomma separated values</a>, often with the data in quotes. TSV\nfiles use tabs as separators, and usually don't bother with the\nquotes.</p>\n<p>File names should end with .csv if they're comma separated.</p>\n<p>A rough \"spec\" for CSV can be found\n<a href=\"http://tools.ietf.org/html/rfc4180\">here</a>.</p>\n<p>To load files, use the loadTable method.</p>\n<p>To save tables to your computer, use the save method\n or the saveTable method.</p>\n\nPossible options include:\n<ul>\n<li>csv - parse the table as comma-separated values\n<li>tsv - parse the table as tab-separated values\n<li>header - this table has a header (title) row\n</ul>",
