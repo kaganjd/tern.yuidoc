@@ -21,12 +21,27 @@ module.exports = function(grunt) {
           }
         ]
       }
+    },
+    // Start a server so we can generate the Tern def file in the browser
+    connect: {
+      server: {
+        options: {
+          port: 9001,
+          base: './',
+          keepalive: true,
+          open: {
+            target:'http://localhost:9001/generator/yui/yui2tern.html',
+            appName: 'generator'
+          }
+        }
+      }
     }
   });
 
-  grunt.registerTask('default', ['rename']);
+  grunt.registerTask('default', ['rename', 'file_append', 'connect']);
 
   grunt.loadNpmTasks('grunt-rename-util');
   grunt.loadNpmTasks('grunt-file-append');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
 };
