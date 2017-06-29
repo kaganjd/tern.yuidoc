@@ -6,14 +6,28 @@
 <script type="text/javascript" src="../../lib/tern-yuidoc.js"></script>
 <script type="text/javascript" src="../../lib/tern-yui.js"></script>
 <script type="text/javascript">
-  function yui2Tern() {
-    var ternDef = TernYUIDoc.YUI.generate(yuiDoc);
-    document.getElementById('ternDef').value = JSON.stringify(ternDef, null,
-        ' ');
+  function getTernDef() {
+    var yuiToTern = TernYUIDoc.YUI.generate(yuiDoc);
+    var textArea = document.getElementById('ternDef');
+    var filename = "p5Tern.json";
+    textArea.value = JSON.stringify(yuiToTern, null, ' ');
+
+    download(filename, textArea.value);
+    
+    // http://jsfiddle.net/ourcodeworld/rce6nn3z/2/
+    function download(filename, text) {
+      var element = document.createElement('a');
+      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+      element.setAttribute('download', filename);
+      element.style.display = 'none';
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    }
   }
 </script>
 </head>
-<body onload="yui2Tern();">
+<body onload="getTernDef();">
 	<textarea id="ternDef" style="width: 100%; height: 100%"></textarea>
 </body>
 </html>
