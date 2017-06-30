@@ -2,3 +2,5 @@
 /bin
 /.project
 /target
+node_modules
+yui.data.json.js
