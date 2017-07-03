@@ -2,22 +2,43 @@ module.exports = function(grunt) {
 
   // Initialize config.
   grunt.initConfig({
-    // Rename data.json file to yui.data.json.js and move it to ./generator
-    rename: {
-      main: {
+    // Replace HTML formatting like <p> and \n in the data.json file
+    replace: {
+      dist: {
+        options: {
+          patterns: [
+            {
+              match: /<\/?p[^>]*>/g,
+              replacement: ''
+            },
+            // TODO: Figure out how to correctly replace \n data.json file
+            // {
+            //   match: /\n/g,
+            //   replacement: ''
+            // }
+          ]
+        },
         files: [
-          {src: ['./data.json'], dest: './generator/yui.data.json.js'}
+          {expand: true, flatten: true, src: ['data.json'], dest: 'temp/' }
         ]
       }
     },
-    // Prepend "var yuiDoc =" string to yui.data.json.js
+    // Prepend "var yuiDoc =" string to temp/data.json
     file_append: {
       default_options: {
         files: [
           {
             prepend: "var yuiDoc = ",
-            input: './generator/yui.data.json.js'
+            input: 'temp/data.json'
           }
+        ]
+      }
+    },
+    // Rename temp/data.json file to yui.data.json.js and move it to generator/
+    rename: {
+      main: {
+        files: [
+          {src: ['temp/data.json'], dest: 'generator/yui.data.json.js'}
         ]
       }
     },
@@ -36,10 +57,12 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['rename', 'file_append', 'connect']);
+  grunt.registerTask('default', ['replace', 'file_append', 'rename', 'connect']);
 
-  grunt.loadNpmTasks('grunt-rename-util');
+
+  grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-file-append');
+  grunt.loadNpmTasks('grunt-rename-util');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
 };
