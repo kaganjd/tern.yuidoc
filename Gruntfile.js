@@ -19,7 +19,7 @@ module.exports = function(grunt) {
           ]
         },
         files: [
-          {expand: true, flatten: true, src: ['data.json'], dest: 'temp/' }
+          {expand: true, flatten: true, src: ['../../docs/reference/data.json'], dest: 'temp/' }
         ]
       }
     },
